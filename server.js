@@ -1,23 +1,34 @@
 'use strict';
 
 const express = require('express');
-const dynamicMiddleware = require('express-dynamic-middleware');
-const stripe = require('stripe')('sk_test_wFREEoYInOqJ8GIdLAy3k0fS');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const passport = require('passport');
 const session = require('express-session');
 const busboyBodyParser = require('busboy-body-parser');
 const path = require('path');
-const fs = require('fs');
-var cors = require('cors');
 const app = express();
+const fs = require('fs')
 
 const PORT = process.env.PORT || 4040;
 global.ROOTPATH = __dirname;
-
 const _ = require('lodash');
 const moment = require('moment');
+
+// mongoose.connect('mongodb://localhost/gramie_player');
+let url = 'mongodb://phamonisTeam:Defragment123@ds046027.mlab.com:46027/phamonis'
+mongoose.connect(url, (err,db)=>{
+  if(err) { 
+    throw err
+  } else {
+    console.log('Successfully connected to MongoDB')
+  }
+})
+//mongoose.connect('mongodb://localhost/union_prod');
+mongoose.connection.on('error', function(err) {
+  console.error('MongoDB connection error: ' + err);
+  process.exit(-1);
+});
 
 app.use(function(req, res, next) {
   // Website you wish to allow to connect
