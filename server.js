@@ -66,6 +66,8 @@ app.use(busboyBodyParser());
 
 app.use('/auth', require('./auth'))
 
+login => server => middleware => database => server => Client
+
 app.locals.moment = require('moment');
 
 app.get('/dist-user-images/:filename', function(req, res) {
