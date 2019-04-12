@@ -9,71 +9,7 @@ var mongooseTypes = require("mongoose-types"); //for valid email and url
 mongooseTypes.loadTypes(mongoose, "email");
 var Email = mongoose.SchemaTypes.Email;
 var UserSchema = new Schema({
-    firstName: {
-        type: String,
-        default: '',
-        required: true,
-        lowercase: true
-    },
-    lastName: { 
-        type: String,
-        default: '',
-        lowercase: true
-    },
-    gender: String,
-    age: String,
-    phone: String,
-    profilePicture: {
-        type: String,
-        default: "!logged-user.jpg"
-    },
-    email: {
-        type: Email,
-        lowercase: true
-    },
-    hashedPassword:{
-        type : String,
-    },
-    salt: {
-        type : String,
-    },
-    forgotPasswordToken : String,
-    role: {
-        type: String,
-        default: 'user',
-        enum: ['user', 'doctor', 'nurse', 'pi', 'admin']
-    },
-    accountActivated: {
-        isTrue : {
-            type: Boolean,
-            default: false
-        },
-        token: String
-    },
-    profileApproved :{
-        type: Boolean,
-        default: false
-    }, 
-
-    points: {
-        type: Number,
-        default: 0
-    },
     
-    description : String,
-    shortDescription : String,
-    
-    city : String,
-    state: String,
-    country : String,
- 
-    birthSign: String, 
-    terms: {
-        type:Boolean, 
-        required: true
-    },
-    dateOfBirth : Date,
-    createdt: { type: Date, default: Date.now }
 });
 
 /**

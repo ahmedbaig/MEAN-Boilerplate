@@ -49,6 +49,7 @@ app.use(function(req, res, next) {
   }
 });
 
+
 // APP DEFAULT ROUTE TO DIST
 app.use(express.static(path.join(__dirname, 'dist/App/')));
 
@@ -57,17 +58,11 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 
-app.use(bodyParser.json({
+app.use(bodyParser.json({ 
   limit: '50mb'
 }));
 
 app.use(busboyBodyParser());
-
-app.use(passport.initialize());
-
-app.use(session({
-  secret: 'ssshhhhh'
-}));
 
 app.use('/auth', require('./auth'))
 
