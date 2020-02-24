@@ -18,8 +18,8 @@
     "e2e": "ng e2e"
   },
   "dependencies": {
-    "@angular/cli": "^7.3.8",
     "@angular/animations": "^6.1.0",
+    "@angular/cli": "^7.3.8",
     "@angular/common": "^6.1.0",
     "@angular/compiler": "^6.1.0",
     "@angular/core": "^6.1.4",
@@ -39,6 +39,7 @@
     "composable-middleware": "^0.3.0",
     "cors": "^2.8.4",
     "crypto": "^1.0.1",
+    "dotenv": "^8.2.0",
     "ejs": "^2.5.7",
     "expres": "0.0.5",
     "express": "^4.16.2",
