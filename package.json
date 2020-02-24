@@ -49,7 +49,7 @@
     "fb": "^2.0.0",
     "jsonwebtoken": "^8.1.0",
     "lodash": "^4.17.5",
-    "mongoose": "^4.8.1",
+    "mongoose": "^5.7.5",
     "mongoose-types": "^1.0.3",
     "nodemailer": "^4.4.2",
     "passport": "^0.4.0",
