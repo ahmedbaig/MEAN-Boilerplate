@@ -1,17 +1,18 @@
 'use strict';
 
-var express = require('express');
-var passport = require('passport');
-// var config = require('../config/environment');
-// var User = require('../api/user/user.model');
+const express = require('express');
+const auth = require('./auth.service');
 
-// Passport Configuration
-// require('./local/passport').setup(User);
-// require('./facebook/passport').setup(User, config);
+const router = express.Router();
 
-var router = express.Router();
+router.post('/register' , auth.create);
 
-router.use('/local', require('./local'));
-router.use('/facebook', require('./facebook'));
+router.post('/login', auth.loginUser);
+
+router.post('/send-forgot-password-email', auth.forgotPassword);
+
+router.post('/reset-password/:forgotPasswordToken', auth.resetPassword);
+
+router.get('/activate-account/:token', auth.activateAccount);
 
 module.exports = router;
